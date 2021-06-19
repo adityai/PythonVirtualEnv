@@ -6,11 +6,11 @@ mkdir ~/.localpython
 
 #Download python tgz
 cd ~/src
-curl -O http://www.python.org/ftp/python/2.7.10/Python-2.7.10.tgz
-tar -zxvf Python-2.7.10.tgz
-cd Python-2.7.10
+curl -O https://www.python.org/ftp/python/3.9.5/Python-3.9.5.tgz
+tar -zxvf Python-3.9.5.tgz
+cd Python-3.9.5.tgz
 
-#Compile Python 2.7.10 from source
+#Compile Python 3.9.5 from source
 make clean
 ./configure --prefix=/home/${USER}/.localpython
 make
@@ -18,9 +18,9 @@ make install
 
 #Download virtualenv installer tar.gz
 cd ~/src
-curl -O https://pypi.python.org/packages/d4/0c/9840c08189e030873387a73b90ada981885010dd9aea134d6de30cd24cb8/virtualenv-15.1.0.tar.gz#md5=44e19f4134906fe2d75124427dc9b716
-tar -zxvf virtualenv-15.1.0.tar.gz
-cd virtualenv-15.1.0/
+curl -O https://files.pythonhosted.org/packages/7c/46/4d4c37b6d96eb06961f8b2f38f7df12bb1a4951ff1145ac5dead9977e674/virtualenv-20.4.7.tar.gz
+tar -zxvf virtualenv-20.4.7.tar.gz
+cd virtualenv-20.4.7/
 
 #Install virtualenv using the python compiled in .localpython directory
 ~/.localpython/bin/python setup.py install
@@ -30,10 +30,10 @@ mkdir /home/${USER}/virtualenvs
 cd /home/${USER}/virtualenvs
 
 #Create virtual environment using .localpython 
-~/.localpython/bin/virtualenv py2.7 --python=/home/${USER}/.localpython/bin/python2.7
+~/.localpython/bin/virtualenv py3.9.5 --python=/home/${USER}/.localpython/bin/python3.9.5
 
 #Activate the virtual environment
-source ~/virtualenvs/py2.7/bin/activate
+source ~/virtualenvs/py3.9.5/bin/activate
 
 #Verify python version after activation: Output must be: Python 2.7.10
 python --version
