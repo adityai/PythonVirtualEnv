@@ -8,7 +8,7 @@ mkdir ~/.localpython
 cd ~/src
 curl -O https://www.python.org/ftp/python/3.9.5/Python-3.9.5.tgz
 tar -zxvf Python-3.9.5.tgz
-cd Python-3.9.5.tgz
+cd Python-3.9.5
 
 #Compile Python 3.9.5 from source
 make clean
